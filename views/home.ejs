@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header') %>
+        <title>Home | CloudShare</title>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+
+        <div class="container my-4">
+            <% if (locals.user) { %>
+                <div>
+                    <h3 class="mb-4 pb-3 border-bottom">Dashboard</h3>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label class="form-label" for="file">Upload File*</label>
+                            <input type="file" class="form-control" id="file" name="file" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <% if (locals.shortUrls) { %>
+                    <div class="my-5">
+                        <h4 class="mb-4 pb-3 border-bottom">Upload History</h4>
+                        <ul class="list-group">
+                            <% shortUrls.forEach((url)=> { %>
+                                <li class="list-group-item d-flex justify-content-between px-3">
+                                    <span>
+                                        <a href="/d/<%= url.short %>">
+                                            <%= url.short %>
+                                        </a>
+                                    </span>
+                                    <span>
+                                        <%= url.fileName %>
+                                    </span>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+                    <% } %>
+
+                        <% } else { %>
+                            <div class="px-4 py-2 my-3 text-center">
+                                <h1 class="display-5 fw-bold text-body-emphasis mx-auto">Simplify File Sharing <br> with
+                                    <span class="text-primary">CloudShare</span>
+                                </h1>
+                                <div class="col-lg-6 mx-auto">
+                                    <p class="lead my-5">CloudShare simplifies file sharing by allowing users to upload
+                                        files
+                                        and generate short links for easy sharing with anyone, anywhere. With secure and
+                                        fast
+                                        file uploads, instant link generation, and one-click sharing, CloudShare ensures
+                                        that
+                                        your files are accessible on any device, at any time. Start sharing effortlessly
+                                        today!
+                                    </p>
+                                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                        <a href="/user/signup" class="btn btn-primary btn-lg px-4 gap-3">Sign up</a>
+                                        <a href="/user/signin" class="btn btn-outline-secondary btn-lg px-4">Sign in</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+        </div>
+        <%- include('./partials/scripts') %>
+</body>
+
+</html>
