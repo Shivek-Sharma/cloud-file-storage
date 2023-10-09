@@ -1,4 +1,4 @@
-# CloudShare
+# CloudShare - File Sharing Platform
 
 CloudShare simplifies file sharing by allowing users to upload files and generate short links for easy sharing with anyone, anywhere. With secure and fast file uploads, instant link generation, and one-click sharing, CloudShare ensures that your files are accessible on any device, at any time. Start sharing effortlessly today!
 
@@ -10,7 +10,7 @@ CloudShare simplifies file sharing by allowing users to upload files and generat
 
 ## Introduction
 
-CloudShare leverages EJS and Bootstrap for its frontend, while the backend is powered by Node.js, Express, and MongoDB, utilizing AWS S3 for cloud file storage. With CloudShare, upload files and share them instantly with anyone, anywhere.
+CloudShare leverages EJS and Bootstrap for its frontend, while the backend is powered by Node.js, Express, and MongoDB, utilizing Multer for file upload and AWS S3 for cloud file storage. With CloudShare, upload files and share them instantly with anyone, anywhere.
 
 
 ## Features
@@ -23,7 +23,7 @@ CloudShare comes equipped with a wide range of features to enhance your file sha
 
 3. **Authorization**: CloudShare maintains authorization across all routes using JSON Web Tokens (JWT) and cookies, ensuring that only an authorized user can access the uploaded files on our platform.
 
-4. **Upload Files to Cloud**: Easily upload your files of any type within allowed file size limit (50 MB) to our secure cloud storage.
+4. **Upload Files to Cloud**: Easily upload your files of any type within the allowed file size limit (50 MB) to our secure cloud storage.
 
 5. **Generate Short Link**: Create short, shareable links for any of your uploaded files. Share these links with friends, colleagues, or anyone you choose.
 
@@ -31,7 +31,7 @@ CloudShare comes equipped with a wide range of features to enhance your file sha
 
 ## Installation Guide
 
-To get started with Blogify on your local machine, follow these installation steps:
+To get started with CloudShare on your local machine, follow these installation steps:
 
 1. **Clone the Repository**: Begin by cloning this repository to your local machine using the following command:
 
@@ -56,7 +56,7 @@ To get started with Blogify on your local machine, follow these installation ste
    JWT_SECRET=your-secret
    ```
 
-4. **Start the Application**: Run the following command to start the Blogify application:
+4. **Start the Application**: Run the following command to start the CloudShare application:
 
    ```
    npm run dev
